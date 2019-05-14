@@ -4667,7 +4667,7 @@ declare module cc {
 		@example 
 		```js
 		onPlay: function (event) {
-		    var state = event.detail;    // state instanceof cc.AnimationState
+		    var state = event;    // state instanceof cc.AnimationState
 		    var type = event.type;       // type === 'play';
 		}
 		
@@ -5892,7 +5892,7 @@ declare module cc {
 		dispatchEvent(event : Event) : void;		
 		/** !#en
 		Send an event to this object directly, this method will not propagate the event to any other objects.
-		The event will be created from the supplied message, you can get the "detail" argument from event.detail.
+		The event will be created from the supplied message, you can get the "detail" argument from event.
 		!#zh
 		该对象直接发送事件， 这种方法不会对事件传播到任何其他对象。
 		@param message the message to send

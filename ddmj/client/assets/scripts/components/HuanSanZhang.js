@@ -39,7 +39,7 @@ cc.Class({
         });
         
         this.node.on('huanpai_notify',function(data){
-            if(data.detail.seatindex == cc.vv.gameNetMgr.seatIndex){
+            if(data.seatindex == cc.vv.gameNetMgr.seatIndex){
                 self.initHuaipaiInfo();    
             }
         });
@@ -63,7 +63,7 @@ cc.Class({
         });
         
         this.node.on('mj_clicked',function(data){
-            var target = data.detail;
+            var target = data;
             //如果已经点起来，则取消
             var idx = self._huanpaiArr.indexOf(target); 
             if(idx != -1){

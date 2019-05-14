@@ -2,7 +2,7 @@ if(window.io == null){
     window.io = require("socket-io");
 }
  
-var Global = cc.Class({
+var Net = cc.Class({
     extends: cc.Component,
     statics: {
         ip:"",

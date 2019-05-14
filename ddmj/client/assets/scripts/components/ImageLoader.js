@@ -1,3 +1,7 @@
+/**
+通过向服务器请求HTTP请求获取用户信息，再通过回调设置URL头
+ */
+
 function loadImage(url,code,callback){
     /*
     if(cc.vv.images == null){

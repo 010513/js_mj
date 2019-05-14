@@ -28,6 +28,8 @@ cc.Class({
     },
     
     onInputFinished:function(roomId){
+        //回调函数后加上bind(this)的作用
+        //改变this的指向，类似var that = this;或者var self = this;
         cc.vv.userMgr.enterRoom(roomId,function(ret){
             if(ret.errcode == 0){
                 this.node.active = false;

@@ -23,6 +23,7 @@ cc.Class({
         
         this._userinfo = cc.find("Canvas/userinfo");
         this._userinfo.active = false;
+        //因为这样处理点击面板任意地方关闭，所以脚本组件是在父节点上动态加载的(Hall.js中，this.addComponent("UserInfoShow");)
         cc.vv.utils.addClickEvent(this._userinfo,this.node,"UserInfoShow","onClicked");
         
         cc.vv.userinfoShow = this;

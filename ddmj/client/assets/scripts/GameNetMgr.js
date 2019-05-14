@@ -228,7 +228,7 @@ cc.Class({
         });
         
         cc.vv.net.addHandler("new_user_comes_push",function(data){
-            //console.log(data);
+            console.log(data);
             var seatIndex = data.seatindex;
             if(self.seats[seatIndex].userid > 0){
                 self.seats[seatIndex].online = true;

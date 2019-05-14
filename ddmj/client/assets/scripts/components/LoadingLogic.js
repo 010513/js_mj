@@ -3,6 +3,7 @@ cc.Class({
 
     properties: {
         tipLabel:cc.Label,
+        ipLabel:cc.Label,
         _stateStr:'',
         _progress:0.0,
         _splash:null,
@@ -21,6 +22,8 @@ cc.Class({
         
         this._splash = cc.find("Canvas/splash");
         this._splash.active = true;
+
+        this.ipLabel.string = cc.vv.http.url;
     },
     
     start:function(){        
@@ -56,6 +59,7 @@ cc.Class({
     },
     
     initMgr:function(){
+        //把vv集作为CC的属性，那么相当于全局变量了，loading场景切换后，各种管理器还在，不用定义常驻节点了
         cc.vv = {};
         var UserMgr = require("UserMgr");
         cc.vv.userMgr = new UserMgr();

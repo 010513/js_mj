@@ -113,6 +113,8 @@ cc.Class({
                 if(callback != null){
                     callback(ret);
                 }
+                //连接游戏服，连接成功后，长连接(socket.io)，然后登录游戏服，
+                //成功后回调切换场景
                 cc.vv.gameNetMgr.connectGameServer(ret);
             }
         };

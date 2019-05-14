@@ -1,3 +1,4 @@
+//字符串拼接的功能扩展
 String.prototype.format = function(args) { 
     if (arguments.length>0) { 
         var result = this; 
