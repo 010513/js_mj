@@ -176,6 +176,7 @@ exports.createRoom = function(creator,roomConf,gems,ip,port,callback){
 						if(uuid != null){
 							roomInfo.uuid = uuid;
 							console.log(uuid);
+							//本地缓存
 							rooms[roomId] = roomInfo;
 							totalRooms++;
 							callback(0,roomId);
@@ -265,6 +266,7 @@ exports.enterRoom = function(roomId,userId,userName,callback){
 			}
 			else{
 				//construct room.
+				//从DB恢复房间
 				room = constructRoomFromDb(dbdata);
 				//
 				var ret = fnTakeSeat(room);

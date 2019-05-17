@@ -1,11 +1,11 @@
-﻿var HALL_IP = "172.17.1.74";
+﻿var HALL_IP = "172.17.2.50";
 var HALL_CLIENT_PORT = 9001;
-var HALL_ROOM_PORT = 9002;
+var HALL_ROOM_PORT = 8888;
 
 var ACCOUNT_PRI_KEY = "^&*#$%()@";
 var ROOM_PRI_KEY = "~!@#$(*&^%$&";
 
-var LOCAL_IP = '172.17.1.74';
+var LOCAL_IP = '172.17.2.50';
 
 exports.mysql = function(){
 	return {
@@ -20,7 +20,7 @@ exports.mysql = function(){
 //账号服配置
 exports.account_server = function(){
 	return {
-		CLIENT_PORT:9000,
+		CLIENT_PORT:81,
 		HALL_IP:HALL_IP,
 		HALL_CLIENT_PORT:HALL_CLIENT_PORT,
 		ACCOUNT_PRI_KEY:ACCOUNT_PRI_KEY,
@@ -51,7 +51,7 @@ exports.game_server = function(){
 		SERVER_ID:"001",
 		
 		//暴露给大厅服的HTTP端口号
-		HTTP_PORT:9003,
+		HTTP_PORT:9008,
 		//HTTP TICK的间隔时间，用于向大厅服汇报情况
 		HTTP_TICK_TIME:5000,
 		//大厅服IP
@@ -64,6 +64,15 @@ exports.game_server = function(){
 		
 		//暴露给客户端的接口
 		CLIENT_IP:HALL_IP,
-		CLIENT_PORT:10000,
+		CLIENT_PORT:82,
 	};
 };
+
+//更新服配置
+exports.update_srver = function(){
+	return{
+		UPDATE_IP:HALL_IP,
+		PORT:80,
+		UPDATE_DIR:'hotUpdate'
+	}
+}
