@@ -7,8 +7,8 @@ cc.Class({
             type: cc.Node
         },
         manifestUrl: {
-            default: null,
-            url: cc.RawAsset
+            type: cc.Asset,
+            default: null
         },
         percent: {
             default: null,
@@ -147,24 +147,29 @@ cc.Class({
     onLoad: function () {
         // Hot update is only available in Native build
         if (!cc.sys.isNative) {
-            return;
+           // return;
+           cc.director.loadScene("loading");
         }
-        this.lblErr.string += "检查游戏资源...\n";
-        var storagePath = ((jsb.fileUtils ? jsb.fileUtils.getWritablePath() : '/') + 'tiantianqipai-asset');
-        cc.log('Storage path for remote asset : ' + storagePath);
-        this.lblErr.string += storagePath + "\n";
-        cc.log('Local manifest URL : ' + this.manifestUrl);
-        this._am = new jsb.AssetsManager(this.manifestUrl, storagePath);
-        this._am.retain();
-
-        this._needUpdate = false;
-        if (this._am.getLocalManifest().isLoaded())
+        else
         {
-            this._checkListener = new jsb.EventListenerAssetsManager(this._am, this.checkCb.bind(this));
-            cc.eventManager.addListener(this._checkListener, 1);
+            this.lblErr.string += "检查游戏资源...\n";
+            var storagePath = ((jsb.fileUtils ? jsb.fileUtils.getWritablePath() : '/') + 'tiantianqipai-asset');
+            cc.log('Storage path for remote asset : ' + storagePath);
+            this.lblErr.string += storagePath + "\n";
+            cc.log('Local manifest URL : ' + this.manifestUrl);
+            this._am = new jsb.AssetsManager(this.manifestUrl, storagePath);
+            this._am.retain();
 
-            this._am.checkUpdate();
+            this._needUpdate = false;
+            if (this._am.getLocalManifest().isLoaded())
+            {
+                this._checkListener = new jsb.EventListenerAssetsManager(this._am, this.checkCb.bind(this));
+                cc.eventManager.addListener(this._checkListener, 1);
+
+                this._am.checkUpdate();
+            }
         }
+        
     },
 
     onDestroy: function () {

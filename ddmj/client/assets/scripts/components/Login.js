@@ -65,9 +65,9 @@ cc.Class({
         
         this._mima = ["A","A","B","B","A","B","A","B","A","A","A","B","B","B"];
         
-        if(!cc.sys.isNative || cc.sys.os == cc.sys.OS_WINDOWS){
+        //if(!cc.sys.isNative || cc.sys.os == cc.sys.OS_WINDOWS){
             cc.find("Canvas/btn_yk").active = true;    
-        }
+        //}
     },
     
     start:function(){

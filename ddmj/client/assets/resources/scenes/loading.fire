@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.5083333333333333,
-      "y": 0.5083333333333333,
+      "x": 0.6958116319444444,
+      "y": 0.6958116319444444,
       "z": 1
     },
     "_quat": {
@@ -425,7 +425,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 239.17,
-      "height": 35
+      "height": 70
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -470,8 +470,8 @@
     "_srcBlendFactor": 1,
     "_dstBlendFactor": 771,
     "_useOriginalSize": false,
-    "_string": "正在连接网络...",
-    "_N$string": "正在连接网络...",
+    "_string": "更新版本\n正在连接网络...",
+    "_N$string": "更新版本\n正在连接网络...",
     "_fontSize": 35,
     "_lineHeight": 35,
     "_enableWrapText": true,
