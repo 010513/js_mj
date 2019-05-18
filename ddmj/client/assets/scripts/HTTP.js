@@ -2,8 +2,8 @@
 //var URL = "http://120.24.181.145:9000";
 //var URL = "http://120.24.59.70:9000";
 //var URL = "http://192.168.1.168:9000";
-var URL = "http://172.17.2.50:81";
-cc.VERSION = 20161227;
+var URL = "http://192.168.0.105:81";
+cc.VERSION = 20161227;//整包更新的版本号
 var HTTP = cc.Class({
     extends: cc.Component,
 

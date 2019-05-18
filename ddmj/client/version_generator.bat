@@ -1,1 +1,1 @@
-node version_generator.js -v 1.4.5 -u http://172.17.2.50:80/remote-assets/ -s build/jsb-default/ -d assets/
+node version_generator.js -v 1.4.5 -u http://192.168.0.105:80/remote-assets/ -s build/jsb-default/ -d assets/
